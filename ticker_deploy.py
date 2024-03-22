@@ -6,8 +6,6 @@ from datetime import date
 def ticker_deploy(tickerlist, startdate="2008-01-01", enddate=f"{str(date.today())}", index="index.html"):
     create_page(tickerlist, startdate, enddate)
     acp(index)
-    for i in tickerlist:
-        acp(f"{i}.jpg")
 
 
 def main():
