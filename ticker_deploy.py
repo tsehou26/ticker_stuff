@@ -3,13 +3,15 @@ from git_push import acp
 from datetime import date
 
 
-def ticker_deploy(tickerlist, startdate="2008-01-01", enddate=f"{str(date.today())}"):
+def ticker_deploy(tickerlist, startdate="2008-01-01", enddate=f"{str(date.today())}", index="index.html"):
     create_page(tickerlist, startdate, enddate)
-    acp("assets.html")
+    acp(index)
+    for i in tickerlist:
+        acp(f"{i}.jpg")
 
 
 def main():
-    ticker_deploy(["FXAIX", "NVDA", "IBIT"])
+    ticker_deploy(["FXAIX", "NVDA", "IBIT"], "2024-01-01")
 
 
 if __name__ == '__main__':
